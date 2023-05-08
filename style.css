@@ -1,0 +1,86 @@
+
+    :root {
+      --step-size: 32px;
+      --step-border: 2px solid #ccc;
+      --step-active-bg: #007bff;
+      --step-active-border: none;
+      --step-active-color: #fff;
+      --step-label-size: 16px;
+      --step-label-color: #666;
+      --step-label-active-color: #007bff;
+      --button-bg: #007bff;
+      --button-color: #fff;
+      --button-hover-bg: #0056b3;
+    }
+
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background-color: #f8f9fa;
+    }
+
+    h1 {
+      margin-top: 50px;
+    }
+
+    .progress-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      margin: 50px auto;
+    }
+
+    .step {
+      position: relative;
+      width: var(--step-size);
+      height: var(--step-size);
+      border-radius: 50%;
+      border: var(--step-border);
+      background-color: #fff;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .step.active {
+      background-color: var(--step-active-bg);
+      border: var(--step-active-border);
+    }
+
+    .step.active:before {
+      content: attr(data-label);
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: var(--step-label-size);
+      color: var(--step-label-active-color);
+    }
+
+    .step:before {
+      content: attr(data-label);
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: var(--step-label-size);
+      color: var(--step-label-color);
+    }
+
+    .step:last-child {
+      margin-right: 0;
+    }
+
+    button {
+      background-color: var(--button-bg);
+      color: var(--button-color);
+      font-size: 20px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 50px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background-color: var(--button-hover-bg);
+    }
